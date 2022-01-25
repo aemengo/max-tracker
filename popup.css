@@ -1,0 +1,92 @@
+/*button {*/
+/*  height: 30px;*/
+/*  width: 30px;*/
+/*  outline: none;*/
+/*  margin: 10px;*/
+/*  border: none;*/
+/*  border-radius: 2px;*/
+/*}*/
+
+/*button.current {*/
+/*  box-shadow: 0 0 0 2px white,*/
+/*              0 0 0 4px black;*/
+/*}*/
+
+body {
+  width: 250px;
+  margin: 0;
+}
+
+#header {
+  height: 32px;
+  background-color: #676e7a;
+  color: #ffffff;
+  margin: 0;
+  padding: 2px 10px;
+}
+
+#title {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#article {
+  padding: 4px 10px 5px 10px;
+  background-color: #f3f3f3;
+  height: 80px;
+  font-size: 11px;
+}
+
+#velocity {
+  margin-right: 5px;
+  font-weight: bold;
+  color: #535353;
+}
+
+#input {
+  width: 42px;
+  line-height: 20px;
+  font-weight: bold;
+  color: #535353;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  padding: 2px 4px 1px 4px;
+  font-size: 11px;
+}
+
+#description {
+  color: #333333;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+#velocity-nav {
+  margin-top: 6px;
+  vertical-align: baseline;
+  display: inline-block;
+}
+
+#btn-nav {
+  margin-top: 2px;
+  vertical-align: baseline;
+}
+
+#apply {
+  background-color: #3676c0;
+  color: white;
+  padding: 8px 9px;
+  border-radius: 2px;
+  border: none;
+  line-height: 1.2;
+  font-size: 11px;
+}
+
+#revert {
+  background-color: #666666;
+  color: white;
+  padding: 8px 9px;
+  border-radius: 2px;
+  border: none;
+  line-height: 1.2;
+  font-size: 11px;
+}

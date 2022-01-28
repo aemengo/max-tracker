@@ -1,21 +1,29 @@
-// Initialize button with user's preferred color
-// let changeColor = document.getElementById("changeColor");
-//
-// chrome.storage.sync.get("color", ({ color }) => {
-//   changeColor.style.backgroundColor = color;
-// });
-//
-// changeColor.addEventListener("click", async () => {
-//   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-//
-//   chrome.scripting.executeScript({
-//     target: { tabId: tab.id },
-//     function: setPageBackgroundColor,
-//   });
-// });
-//
-// function setPageBackgroundColor() {
-//   chrome.storage.sync.get("color", ({ color }) => {
-//     document.body.style.backgroundColor = color;
-//   });
-// }
+// Initialize form with default velocity
+let inputVelocity = document.getElementById("input");
+let changeVelocity = document.getElementById("apply");
+let revertVelocity = document.getElementById("revert");
+
+chrome.storage.sync.get("velocity", ({ velocity }) => {
+    inputVelocity.value = velocity
+});
+
+chrome.storage.sync.get("rEnabled", ({ rEnabled }) => {
+    revertVelocity.disabled = !rEnabled
+});
+
+changeVelocity.addEventListener("click", async () => {
+    let velocity = inputVelocity.value
+    let rEnabled = true
+
+    chrome.storage.sync.set({ velocity });
+    chrome.storage.sync.set({ rEnabled });
+    revertVelocity.disabled = false
+    console.log('[maxt] set:', `velocity: ${velocity}`, `revert-enabled: ${rEnabled}`);
+})
+
+revertVelocity.addEventListener("click", async () => {
+    let rEnabled = false
+    chrome.storage.sync.set({ rEnabled });
+    revertVelocity.disabled = true
+    console.log('[maxt] set:', `revert-enabled: ${rEnabled}`);
+})

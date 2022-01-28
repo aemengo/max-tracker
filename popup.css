@@ -79,6 +79,7 @@ body {
   border: none;
   line-height: 1.2;
   font-size: 11px;
+  cursor: pointer;
 }
 
 #revert {
@@ -89,4 +90,11 @@ body {
   border: none;
   line-height: 1.2;
   font-size: 11px;
+  cursor: pointer;
+}
+
+#revert:disabled,
+#revert[disabled]{
+  background-color: #c9c9c9;
+  cursor: default;
 }

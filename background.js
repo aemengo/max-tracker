@@ -1,10 +1,10 @@
 // background.js
 
 let velocity = "1";
-let rEnabled = false;
+let enabled = false;
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.sync.set({ velocity });
-  chrome.storage.sync.set({ rEnabled });
-  console.log('[maxt] set:', `velocity: ${velocity}`, `revert-enabled: ${rEnabled}`);
+  chrome.storage.sync.set({ enabled });
+  console.log('[maxt] saved', `velocity: ${velocity},`, `enabled: ${enabled}`);
 });

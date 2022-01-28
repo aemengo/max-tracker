@@ -1,29 +1,29 @@
 // Initialize form with default velocity
-let inputVelocity = document.getElementById("input");
-let changeVelocity = document.getElementById("apply");
-let revertVelocity = document.getElementById("revert");
+const inputVelocity = document.getElementById("input");
+const changeVelocity = document.getElementById("apply");
+const revertVelocity = document.getElementById("revert");
 
 chrome.storage.sync.get("velocity", ({ velocity }) => {
     inputVelocity.value = velocity
 });
 
-chrome.storage.sync.get("rEnabled", ({ rEnabled }) => {
-    revertVelocity.disabled = !rEnabled
+chrome.storage.sync.get("enabled", ({ enabled }) => {
+    revertVelocity.disabled = !enabled
 });
 
 changeVelocity.addEventListener("click", async () => {
     let velocity = inputVelocity.value
-    let rEnabled = true
+    let enabled = true
 
     chrome.storage.sync.set({ velocity });
-    chrome.storage.sync.set({ rEnabled });
+    chrome.storage.sync.set({ enabled });
     revertVelocity.disabled = false
-    console.log('[maxt] set:', `velocity: ${velocity}`, `revert-enabled: ${rEnabled}`);
+    console.log('[maxt] saved', `velocity: ${velocity},`, `enabled: ${enabled}`);
 })
 
 revertVelocity.addEventListener("click", async () => {
-    let rEnabled = false
-    chrome.storage.sync.set({ rEnabled });
+    let enabled = false
+    chrome.storage.sync.set({ enabled });
     revertVelocity.disabled = true
-    console.log('[maxt] set:', `revert-enabled: ${rEnabled}`);
+    console.log('[maxt] saved', `enabled: ${enabled}`);
 })

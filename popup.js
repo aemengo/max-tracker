@@ -17,9 +17,15 @@ changeVelocity.addEventListener("click", async () => {
 
     chrome.storage.sync.set({ velocity });
     chrome.storage.sync.set({ enabled });
+    console.log('[maxt] saved', `velocity: ${velocity},`, `enabled: ${enabled}`);
 
     revertVelocity.disabled = false;
-    console.log('[maxt] saved', `velocity: ${velocity},`, `enabled: ${enabled}`);
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        if (tabs[0].url.startsWith("https://www.pivotaltracker.com/n/projects")) {
+            chrome.tabs.reload(tabs[0].id);
+        }
+    });
+
     window.close();
 })
 

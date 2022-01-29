@@ -6,7 +6,7 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["storage", "scripting"],
+  "permissions": ["storage"],
   "content_scripts": [
     {
       "matches": ["https://*.pivotaltracker.com/n/projects/*"],

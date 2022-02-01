@@ -1,7 +1,7 @@
 {
   "name": "Max Tracker",
   "description": "Automatically Override the Pivotal Tracker Velocity",
-  "version": "1.0",
+  "version": "1.1",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
@@ -16,16 +16,16 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon" : {
-      "16": "/images/tracker-logo16.png",
-      "32": "/images/tracker-logo32.png",
-      "48": "/images/tracker-logo48.png",
-      "128": "/images/tracker-logo128.png"
+      "16": "tracker-logo16.png",
+      "32": "tracker-logo32.png",
+      "48": "tracker-logo48.png",
+      "128": "tracker-logo128.png"
     },
     "icons" : {
-      "16": "/images/tracker-logo16.png",
-      "32": "/images/tracker-logo32.png",
-      "48": "/images/tracker-logo48.png",
-      "128": "/images/tracker-logo128.png"
+      "16": "tracker-logo16.png",
+      "32": "tracker-logo32.png",
+      "48": "tracker-logo48.png",
+      "128": "tracker-logo128.png"
     }
   }
 }

@@ -1,7 +1,7 @@
 // background.js
 
-let velocity = "1";
-let enabled = false;
+let velocity = "100";
+let enabled = true;
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.sync.set({ velocity });
